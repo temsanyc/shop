@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block title%}
+Домашняя страница
+{%endblock%}
+
+{%block content%}
+
+<div class="container mt-2 ">
+<h1>Добро пожаловать в онлайн магазин</h1>
+{%for el in goods%}
+  <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{el.title}}</font></font></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{el.price}} </font></font><small class="text-body-secondary fw-light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$</font></font></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{el.text}}</font></font></li>
+
+            </ul>
+            <a type="button" class="btn btn-lg btn-block btn-outline-primary" href="/buy/{{el.id}}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Купить</font></font></a>
+          </div>
+        </div>
+      </div>
+{%endfor%}
+    </div>
+{%endblock%}
